@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App DABM - Inicio</title>
+    <style>
+        body{
+            background-color: lightBlue;
+        }
+        #cajaLogin{
+            background-color:white;
+            border-style: double;
+            padding: 20px;
+            width: 60%; 
+            text-align:center;
+            box-shadow: 5px 5px 5px grey;
+            margin : 20% auto;
+            
+        }
+        .letra1{
+            font-size: 14px;
+            font-weight: bold;
+            font-family: courier;
+        }
+        .letra2{
+            font-size: 12px;
+            font-family: courier;
+        }
+    </style>
+    <script>
+        function validar(a){
+            //alert("Ingrese a la funcion")
+            usuario= document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            console.log(usuario);
+            console.log(password);
+            if (usuario ==""){
+                alert("Debe ingresar un usuario");
+            }
+            if (password == ""){
+                alert("Debe ingresar una contrasena");
+            }
+            if((usuario!="")&&(password!="")){
+                document.getElementById("accion").value = a;
+                document.getElementById('formLogin').submit();
+            }
+        }
+    </script>
+</head>
+<body style="background-image: url('/static/fondo.jpg')">
+
+    <form action="/validar" method="post" id="formLogin">
+        <input type="hidden" name="accion" id="accion" value="">
+    <div id="cajaLogin">
+        <img src="{{ url_for('static',filename='logo.jpg') }}" width="200px">
+        <p class="letra1">BIENVENIDO AL SISTEMA</p>
+        <p class="letra2">Usuario: <input type="text" placeholder="usuario" id="usuario" name="usuario" ></p>
+        <p class="letra2">Contrasena: <input type="password" id="password" name="password"></p> 
+        <p><input type="button" value="Ingresar" onclick="validar(1)"></p>
+        <p><input type="button" value="Registro" onclick="validar(2)"></p>
+    </div>
+    </form>
+</body>
+</html>

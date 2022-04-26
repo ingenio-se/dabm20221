@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://127.0.0.1:5000/login -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App DABM - Inicio</title>
+    <style>
+        body{
+            background-color: lightBlue;
+        }
+        #cajaLogin{
+            background-color:white;
+            border-style: double;
+            padding: 20px;
+            width: 60%; 
+            text-align:center;
+            box-shadow: 5px 5px 5px grey;
+            margin : 20% auto;
+            
+        }
+        .letra1{
+            font-size: 14px;
+            font-weight: bold;
+            font-family: courier;
+        }
+        .letra2{
+            font-size: 12px;
+            font-family: courier;
+        }
+    </style>
+    <script>
+        function validar(){
+            //alert("Ingrese a la funcion")
+            usuario= document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            console.log(usuario);
+            console.log(password);
+            if (usuario ==""){
+                alert("Debe ingresar un usuario");
+            }
+            if (password == ""){
+                alert("Debe ingresar una contrasena");
+            }
+            /*if(usuario!="")&&(password!=""){
+
+            }*/
+        }
+    </script>
+</head>
+<body style="background-image: url(&#39;/static/fondo.jpg&#39;)">
+
+    <form action="http://127.0.0.1:5000/validar" method="get">
+    <div id="cajaLogin">
+        <img src="./App DABM - Inicio_files/logo.jpg" width="200px">
+        <p class="letra1">BIENVENIDO AL SISTEMA</p>
+        <p class="letra2">Usuario: <input type="text" placeholder="usuario" id="usuario"></p>
+        <p class="letra2">Contrasena: <input type="password" id="password"></p> 
+        <p><input type="submit" value="Ingresar" onclick="validar()"></p>
+    </div>
+    </form>
+
+</body></html>

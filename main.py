@@ -22,7 +22,7 @@ def validar():
         accion = request.form['accion']
         print("Accion:",accion)
         
-        return render_template('menu.html',title='SISTEMA DE MONITOREO')
+        return render_template('menu.html',title='SISTEMA DE MONITOREO DABM')
 
 @app.route('/monitoreo')
 def monitoreo():

@@ -40,9 +40,7 @@ def monitoreo():
     colores=[]
     for lectura in lecturas:
         color=0
-        '''
-        condicionales
-        '''
+       
         if int(datos[0][1]) <= lectura and int(datos[0][2]) >= lectura:
             color=1
         if int(datos[1][1]) <= lectura and int(datos[1][2]) >= lectura:
